@@ -13,8 +13,10 @@ class Xylophone extends StatelessWidget {
 
   Expanded buildScreen({required Color color, required int number}) {
     return Expanded(
-      child: FlatButton(
-        color: color,
+      child: TextButton(
+        style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all<Color>(color),
+            foregroundColor: MaterialStateProperty.all<Color>(Colors.black)),
         onPressed: () {
           playSound(number);
         },
